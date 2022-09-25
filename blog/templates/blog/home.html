@@ -1,15 +1,23 @@
-{% load static%}
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
-        <title>Home | champpy.com</title>
-    </head>
+{% extends 'blog/base.html' %}
 
-    <body>
-        {% comment %} <link rel="stylesheet" href="{% static 'blog/styles.css' %}"> {% endcomment %}
-        <h1>My beloved pets</h1>
-        <p>Hello, you guys</p>
-    </body>
-    <script src="{% static 'blog/test.js' %}"></script>
-</html>
+{%block title%}
+  <title>Home</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1> Django Learning </h1>
+    {% for post in all_posts %}
+      <div class="row">
+        <div class="col-sm-6">
+          <img src="{{post.image.url}}" class="img-fluid" alt="{{post.title}}">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.short_description}}</p>
+            <a href="/blog/{{post.id}}" class="btn btn-primary">Click ME</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}
