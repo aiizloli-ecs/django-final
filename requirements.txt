@@ -1,0 +1,9 @@
+asgiref==3.5.2
+bleach==5.0.1
+certifi @ file:///opt/conda/conda-bld/certifi_1663615672595/work/certifi
+Django==4.1.1
+django-summernote==0.8.20.0
+Pillow==9.2.0
+six==1.16.0
+sqlparse==0.4.3
+webencodings==0.5.1
